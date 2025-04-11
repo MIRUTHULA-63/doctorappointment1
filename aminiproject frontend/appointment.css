@@ -1,222 +1,134 @@
+/* General Reset and Base */
 * {
-  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: Arial, sans-serif;
+  box-sizing: border-box;
 }
-
 body {
-  background-color: #f8f9fa;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f0f8ff;
   color: #333;
+  line-height: 1.6;
 }
 
-/* Header */
+/* Navigation Bar */
 header {
-  background-color: #0077b6;
+  background: #004080;
   padding: 1rem 2rem;
-  color: white;
-}
-
-.header-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap;
 }
-
 .logo {
+  color: #fff;
   font-size: 1.5rem;
   font-weight: bold;
 }
-
-.nav-links {
-  display: flex;
-  gap: 1.2rem;
-}
-
 .nav-links a {
   color: white;
   text-decoration: none;
+  margin-left: 1.5rem;
   font-weight: 500;
-  transition: color 0.3s ease;
 }
-
 .nav-links a:hover {
-  color: #90e0ef;
+  text-decoration: underline;
 }
 
-/* Hero */
+/* Hero Section */
 .hero {
-  position: relative;
-  background-image: url("https://images.unsplash.com/photo-1588776814546-ec09b112fdbf"); /* Replace with your preferred image */
-  background-size: cover;
-  background-position: center;
-  height: 100vh;
+  background: url("https://images.unsplash.com/photo-1588776814546-ec1c9d241f4e")
+    no-repeat center center/cover;
+  padding: 4rem 2rem;
   color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-overlay {
-  background: rgba(0, 0, 0, 0.6);
-  width: 100%;
-  height: 100%;
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.hero-content {
-  max-width: 800px;
   text-align: center;
 }
-
-.hero h2 {
+.hero h1 {
   font-size: 3rem;
   margin-bottom: 1rem;
 }
-
 .hero p {
   font-size: 1.2rem;
-  margin-bottom: 2rem;
 }
 
-.highlights {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-bottom: 2rem;
-}
-
-.highlight {
-  background: rgba(255, 255, 255, 0.1);
-  padding: 1rem;
-  border-radius: 10px;
-  width: 200px;
-  backdrop-filter: blur(5px);
-  color: white;
-}
-
-.cta-button {
-  padding: 12px 24px;
-  background-color: #00b4d8;
-  color: white;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: background-color 0.3s ease;
-}
-
-.cta-button:hover {
-  background-color: #0077b6;
-}
-
-/* Sections */
-.about,
-.services,
-.testimonials {
-  padding: 2rem;
-  text-align: center;
-}
-
-.services ul {
-  list-style-type: none;
-  margin-top: 1rem;
-}
-
-.services li {
-  padding: 5px;
-}
-
-/* Doctors */
+/* Doctors Section */
 .doctors-section {
-  padding: 2rem;
-  text-align: center;
+  padding: 3rem 2rem;
+  background-color: #e6f2ff;
 }
-
-.doctor-list {
-  display: flex;
-  justify-content: center;
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 2rem;
-  flex-wrap: wrap;
-  margin-top: 1rem;
 }
-
 .doctor-card {
   background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  width: 200px;
+  padding: 1.5rem;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
 }
-
+.doctor-card:hover {
+  transform: translateY(-5px);
+}
 .doctor-card img {
-  width: 100%;
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+}
+.doctor-card h3 {
+  margin: 0.5rem 0;
+  color: #004080;
 }
 
 /* Appointment Form */
 .appointment-form {
-  padding: 2rem;
-  background: #e0f7fa;
+  background: white;
   max-width: 500px;
-  margin: auto;
-  border-radius: 10px;
+  margin: 3rem auto;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
-
-.appointment-form form {
-  display: flex;
-  flex-direction: column;
+.appointment-form h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #004080;
 }
-
 .appointment-form label {
-  margin: 10px 0 5px;
+  display: block;
+  margin: 0.5rem 0 0.2rem;
 }
-
 .appointment-form input,
 .appointment-form select {
-  padding: 8px;
+  width: 100%;
+  padding: 0.5rem;
+  margin-bottom: 1rem;
   border: 1px solid #ccc;
-  border-radius: 5px;
+  border-radius: 6px;
 }
-
 .appointment-form button {
-  margin-top: 15px;
-  padding: 10px;
-  background-color: #00b4d8;
+  background: #004080;
   color: white;
+  padding: 0.7rem 1.2rem;
   border: none;
-  border-radius: 5px;
+  border-radius: 6px;
   cursor: pointer;
+  width: 100%;
+  font-size: 1rem;
 }
-
-/* Testimonials */
-.testimonials {
-  background-color: #f0f0f0;
-}
-
-.testimonial-card {
-  background: white;
-  margin: 1rem auto;
-  padding: 1rem;
-  border-radius: 8px;
-  max-width: 500px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.testimonial-card h4 {
-  margin-top: 0.5rem;
-  font-style: italic;
+.appointment-form button:hover {
+  background: #003060;
 }
 
 /* Footer */
 footer {
-  text-align: center;
-  padding: 2rem;
-  background-color: #0077b6;
+  background: #004080;
   color: white;
+  text-align: center;
+  padding: 1.5rem 1rem;
   margin-top: 2rem;
+  font-size: 0.9rem;
 }

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Dr. Kevin Lee - Orthopedic Surgeon</title>
+    <title>Dr. David Lee - Orthopedic Surgeon</title>
     <style>
       /* Base Reset */
       * {
@@ -150,6 +150,234 @@
           margin: 0.3rem 0.8rem 0.3rem 0;
         }
       }
+      :root {
+        --primary-color: #4361ee;
+        --primary-hover: #3a56d4;
+        --secondary-color: #f8f9fa;
+        --border-color: #dee2e6;
+        --success-color: #2ecc71;
+        --danger-color: #e74c3c;
+        --text-color: #343a40;
+        --text-muted: #6c757d;
+        --border-radius: 6px;
+        --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: #f5f7fa;
+        padding: 20px;
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        background-color: white;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        padding: 30px;
+      }
+
+      h1 {
+        color: var(--primary-color);
+        text-align: center;
+        margin-bottom: 30px;
+        font-size: 28px;
+      }
+
+      .server-status {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        margin-bottom: 20px;
+      }
+
+      .status-indicator {
+        display: inline-block;
+        margin-left: 10px;
+        padding: 6px 12px;
+        border-radius: 20px;
+        font-size: 14px;
+        font-weight: 500;
+      }
+
+      .status-healthy {
+        background-color: rgba(46, 204, 113, 0.2);
+        color: #27ae60;
+      }
+
+      .status-unhealthy {
+        background-color: rgba(231, 76, 60, 0.2);
+        color: #c0392b;
+      }
+
+      .form-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      .form-group label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 500;
+        color: var(--text-color);
+      }
+
+      .form-control {
+        width: 100%;
+        padding: 10px 12px;
+        border: 1px solid var(--border-color);
+        border-radius: var(--border-radius);
+        font-size: 16px;
+        transition: border-color 0.3s;
+      }
+
+      .form-control:focus {
+        border-color: var(--primary-color);
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(67, 97, 238, 0.2);
+      }
+
+      .radio-group,
+      .checkbox-group {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        margin-top: 5px;
+      }
+
+      .radio-option,
+      .checkbox-option {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+      }
+
+      .radio-option input,
+      .checkbox-option input {
+        margin-right: 6px;
+        cursor: pointer;
+      }
+
+      .full-width {
+        grid-column: 1 / -1;
+      }
+
+      .buttons-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        grid-column: 1 / -1;
+      }
+
+      .btn {
+        padding: 12px 20px;
+        border: none;
+        border-radius: var(--border-radius);
+        font-size: 16px;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+      }
+
+      .btn-primary {
+        background-color: var(--primary-color);
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background-color: var(--primary-hover);
+        transform: translateY(-2px);
+      }
+
+      .btn-secondary {
+        background-color: var(--secondary-color);
+        color: var(--text-color);
+      }
+
+      .btn-secondary:hover {
+        background-color: #e9ecef;
+        transform: translateY(-2px);
+      }
+
+      .result-container {
+        margin-top: 30px;
+        padding: 20px;
+        border-radius: var(--border-radius);
+        background-color: #f8f9fa;
+        display: none;
+      }
+
+      .result-heading {
+        margin-bottom: 15px;
+        font-size: 20px;
+        color: var(--primary-color);
+      }
+
+      .prediction-badge {
+        display: inline-block;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-weight: 600;
+        margin-bottom: 10px;
+      }
+
+      .prediction-attend {
+        background-color: rgba(46, 204, 113, 0.2);
+        color: #27ae60;
+      }
+
+      .prediction-noshow {
+        background-color: rgba(231, 76, 60, 0.2);
+        color: #c0392b;
+      }
+
+      .probability-bar {
+        height: 10px;
+        width: 100%;
+        background-color: #e9ecef;
+        border-radius: 5px;
+        margin-top: 10px;
+        overflow: hidden;
+      }
+
+      .probability-fill {
+        height: 100%;
+        background-color: var(--primary-color);
+        border-radius: 5px;
+      }
+
+      .error-message {
+        padding: 15px;
+        background-color: rgba(231, 76, 60, 0.2);
+        color: #c0392b;
+        border-radius: var(--border-radius);
+        margin-top: 20px;
+        display: none;
+      }
+
+      @media (max-width: 768px) {
+        .form-container {
+          grid-template-columns: 1fr;
+        }
+
+        .container {
+          padding: 20px;
+        }
+      }
     </style>
   </head>
   <body>
@@ -185,27 +413,196 @@
     </section>
 
     <!-- Appointment Form Section (Initially Hidden) -->
-    <section id="appointment" class="appointment-form">
-      <h3>Book Appointment with Dr. Kevin Lee</h3>
-      <form>
-        <input type="hidden" value="Dr. Kevin Lee - Orthopedic Surgeon" />
+    <div class="container">
+      <h1>Appointment No-Show Prediction</h1>
 
-        <label for="name">Full Name:</label>
-        <input type="text" name="name" required />
+      <div class="server-status">
+        <button id="checkStatusBtn" class="btn btn-secondary">
+          Check Server
+        </button>
+        <span id="serverStatus" class="status-indicator">Checking...</span>
+      </div>
 
-        <label for="email">Email:</label>
-        <input type="email" name="email" required />
+      <form id="appointmentForm">
+        <div class="form-container">
+          <!-- Patient Details Section -->
+          <div class="form-group">
+            <label for="patientName">Patient Name</label>
+            <input
+              type="text"
+              id="patientName"
+              class="form-control"
+              placeholder="Enter patient name"
+              required
+            />
+          </div>
 
-        <label for="date">Preferred Date:</label>
-        <input type="date" name="date" required />
+          <div class="form-group">
+            <label for="patientId">Patient ID</label>
+            <input
+              type="text"
+              id="patientId"
+              class="form-control"
+              placeholder="Enter patient ID"
+              required
+            />
+          </div>
 
-        <label for="time">Preferred Time:</label>
-        <input type="time" name="time" required />
+          <div class="form-group">
+            <label for="appointmentId">Appointment ID</label>
+            <input
+              type="text"
+              id="appointmentId"
+              class="form-control"
+              placeholder="Enter appointment ID"
+              required
+            />
+          </div>
 
-        <button type="submit">Confirm Appointment</button>
+          <div class="form-group">
+            <label for="age">Age</label>
+            <input
+              type="number"
+              id="age"
+              class="form-control"
+              placeholder="Enter patient age"
+              min="0"
+              max="120"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label>Gender</label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="gender" value="M" required /> Male
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="gender" value="F" /> Female
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>Neighborhood</label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input
+                  type="radio"
+                  name="neighbourhood"
+                  value="Midtown"
+                  required
+                />
+                Midtown
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="neighbourhood" value="Downtown" />
+                Downtown
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="neighbourhood" value="Uptown" />
+                Uptown
+              </label>
+            </div>
+          </div>
+
+          <!-- Appointment Details Section -->
+          <div class="form-group">
+            <label for="scheduledDay">Scheduled Date & Time</label>
+            <input
+              type="datetime-local"
+              id="scheduledDay"
+              class="form-control"
+              required
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="appointmentDay">Appointment Date & Time</label>
+            <input
+              type="datetime-local"
+              id="appointmentDay"
+              class="form-control"
+              required
+            />
+          </div>
+
+          <!-- Medical Conditions Section -->
+          <div class="form-group full-width">
+            <label>Medical Conditions</label>
+            <div class="checkbox-group">
+              <label class="checkbox-option">
+                <input type="checkbox" id="hipertension" name="hipertension" />
+                Hypertension
+              </label>
+              <label class="checkbox-option">
+                <input type="checkbox" id="diabetes" name="diabetes" /> Diabetes
+              </label>
+              <label class="checkbox-option">
+                <input type="checkbox" id="alcoholism" name="alcoholism" />
+                Alcoholism
+              </label>
+              <label class="checkbox-option">
+                <input type="checkbox" id="handcap" name="handcap" /> Handicap
+              </label>
+            </div>
+          </div>
+
+          <!-- Other Details Section -->
+          <div class="form-group">
+            <label>Scholarship</label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="scholarship" value="1" required /> Yes
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="scholarship" value="0" /> No
+              </label>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label>SMS Received</label>
+            <div class="radio-group">
+              <label class="radio-option">
+                <input type="radio" name="sms_received" value="1" required />
+                Yes
+              </label>
+              <label class="radio-option">
+                <input type="radio" name="sms_received" value="0" /> No
+              </label>
+            </div>
+          </div>
+
+          <div class="buttons-container">
+            <button type="button" id="resetBtn" class="btn btn-secondary">
+              Reset Form
+            </button>
+            <button type="submit" class="btn btn-primary">
+              Predict No-Show
+            </button>
+          </div>
+        </div>
       </form>
-    </section>
 
+      <div id="errorMessage" class="error-message"></div>
+
+      <div id="resultContainer" class="result-container">
+        <h3 class="result-heading">Prediction Result</h3>
+        <div id="predictionResult"></div>
+        <div>
+          <p>No-Show Probability: <span id="probabilityValue">0%</span></p>
+          <div class="probability-bar">
+            <div
+              id="probabilityFill"
+              class="probability-fill"
+              style="width: 0%"
+            ></div>
+          </div>
+        </div>
+      </div>
+    </div>
     <footer>
       <h3>Contact Us</h3>
       <p>📍 123 Wellness Avenue, Health City</p>
@@ -215,6 +612,182 @@
     </footer>
 
     <script>
+      // DOM Elements
+      const appointmentForm = document.getElementById("appointmentForm");
+      const resetBtn = document.getElementById("resetBtn");
+      const checkStatusBtn = document.getElementById("checkStatusBtn");
+      const serverStatus = document.getElementById("serverStatus");
+      const resultContainer = document.getElementById("resultContainer");
+      const predictionResult = document.getElementById("predictionResult");
+      const probabilityValue = document.getElementById("probabilityValue");
+      const probabilityFill = document.getElementById("probabilityFill");
+      const errorMessage = document.getElementById("errorMessage");
+
+      // Check server status
+      async function checkServerStatus() {
+        serverStatus.textContent = "Checking...";
+        serverStatus.className = "status-indicator";
+
+        try {
+          const response = await fetch("http://localhost:5000/health", {
+            method: "GET",
+          });
+
+          const result = await response.json();
+
+          if (response.ok && result.status === "healthy") {
+            serverStatus.textContent = "Server Online";
+            serverStatus.className = "status-indicator status-healthy";
+          } else {
+            serverStatus.textContent = "Server Error";
+            serverStatus.className = "status-indicator status-unhealthy";
+          }
+        } catch (error) {
+          serverStatus.textContent = "Server Offline";
+          serverStatus.className = "status-indicator status-unhealthy";
+          console.error("Health check error:", error);
+        }
+      }
+
+      // Convert form data to JSON
+      function getFormData() {
+        return {
+          PATIENTID: document.getElementById("patientId").value,
+          APPOINTMENTID: document.getElementById("appointmentId").value,
+          GENDER:
+            document.querySelector('input[name="gender"]:checked')?.value || "",
+          SCHEDULEDDAY: formatDateForAPI(
+            document.getElementById("scheduledDay").value
+          ),
+          APPOINTMENTDAY: formatDateForAPI(
+            document.getElementById("appointmentDay").value
+          ),
+          AGE: parseInt(document.getElementById("age").value),
+          NEIGHBOURHOOD:
+            document.querySelector('input[name="neighbourhood"]:checked')
+              ?.value || "",
+          SCHOLARSHIP: parseInt(
+            document.querySelector('input[name="scholarship"]:checked')
+              ?.value || 0
+          ),
+          HIPERTENSION: document.getElementById("hipertension").checked ? 1 : 0,
+          DIABETES: document.getElementById("diabetes").checked ? 1 : 0,
+          ALCOHOLISM: document.getElementById("alcoholism").checked ? 1 : 0,
+          HANDCAP: document.getElementById("handcap").checked ? 1 : 0,
+          SMS_RECEIVED: parseInt(
+            document.querySelector('input[name="sms_received"]:checked')
+              ?.value || 0
+          ),
+        };
+      }
+
+      // Format date for API
+      function formatDateForAPI(dateTimeString) {
+        if (!dateTimeString) return "";
+
+        // Convert local datetime-local value to ISO string
+        const date = new Date(dateTimeString);
+        return date.toISOString();
+      }
+
+      // Reset form
+      function resetForm() {
+        appointmentForm.reset();
+        resultContainer.style.display = "none";
+        errorMessage.style.display = "none";
+      }
+
+      // Submit form
+      async function submitForm(event) {
+        event.preventDefault();
+
+        // Hide previous results
+        resultContainer.style.display = "none";
+        errorMessage.style.display = "none";
+
+        try {
+          const formData = getFormData();
+
+          // Validate data
+          if (
+            !formData.GENDER ||
+            !formData.NEIGHBOURHOOD ||
+            !formData.SCHEDULEDDAY ||
+            !formData.APPOINTMENTDAY
+          ) {
+            throw new Error("Please fill in all required fields");
+          }
+
+          const response = await fetch("http://localhost:5000/predict", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify([formData]), // Sending as array to match API expectation
+          });
+
+          const result = await response.json();
+
+          if (
+            result.status === "success" &&
+            result.predictions &&
+            result.predictions.length > 0
+          ) {
+            const prediction = result.predictions[0];
+            const isNoShow = prediction.no_show_prediction;
+            const probability = prediction.no_show_probability;
+
+            // Display results
+            resultContainer.style.display = "block";
+            predictionResult.innerHTML = `
+                        <div class="prediction-badge ${
+                          isNoShow ? "prediction-noshow" : "prediction-attend"
+                        }">
+                            ${
+                              isNoShow
+                                ? "Patient Likely to Miss Appointment"
+                                : "Patient Likely to Attend"
+                            }
+                        </div>
+                    `;
+
+            // Update probability display
+            const probabilityPercent = (probability * 100).toFixed(2);
+            probabilityValue.textContent = `${probabilityPercent}%`;
+            probabilityFill.style.width = `${probabilityPercent}%`;
+          } else {
+            throw new Error(result.message || "Failed to get prediction");
+          }
+        } catch (error) {
+          errorMessage.textContent =
+            error.message || "An error occurred. Please try again.";
+          errorMessage.style.display = "block";
+          console.error("Error:", error);
+        }
+      }
+
+      // Event Listeners
+      appointmentForm.addEventListener("submit", submitForm);
+      resetBtn.addEventListener("click", resetForm);
+      checkStatusBtn.addEventListener("click", checkServerStatus);
+
+      // Check server status on page load
+      window.addEventListener("load", checkServerStatus);
+
+      // Set default appointment times for convenience
+      window.addEventListener("load", () => {
+        // Set scheduled day to now
+        const now = new Date();
+        const scheduledDay = now.toISOString().slice(0, 16);
+        document.getElementById("scheduledDay").value = scheduledDay;
+
+        // Set appointment day to 7 days from now
+        const appointmentDay = new Date();
+        appointmentDay.setDate(appointmentDay.getDate() + 7);
+        document.getElementById("appointmentDay").value = appointmentDay
+          .toISOString()
+          .slice(0, 16);
+      });
       // When the "Book Appointment" button is clicked,
       // hide the doctor's details and show the appointment form.
       document.getElementById("bookBtn").addEventListener("click", function () {

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Doctor Sign-In - CarePlus Clinic</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: "Segoe UI", sans-serif;
+      background-color: #f0f8ff;
+      color: #333;
+    }
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 1rem 2rem;
+      text-align: center;
+    }
+    .container {
+      max-width: 400px;
+      margin: 3rem auto;
+      background: white;
+      padding: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+      text-align: center;
+      color: #004080;
+      margin-bottom: 1.5rem;
+    }
+    label {
+      display: block;
+      margin: 0.5rem 0 0.2rem;
+    }
+    input {
+      width: 100%;
+      padding: 0.6rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      width: 100%;
+      background: #004080;
+      color: white;
+      padding: 0.7rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    button:hover {
+      background: #003060;
+    }
+    .result {
+      text-align: center;
+      margin-top: 2rem;
+      padding: 1rem;
+      background: #e0f7fa;
+      border-radius: 6px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>CarePlus Clinic</h1>
+  </header>
+
+  <div class="container">
+    <h2>Doctor Sign-In</h2>
+    <form id="loginForm">
+      <label for="doctorId">Doctor ID:</label>
+      <input type="text" id="doctorId" required />
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" required />
+
+      <button type="submit">Sign In</button>
+    </form>
+
+    <div class="result" id="resultBox">
+      <h3>Welcome, <span id="doctorName"></span>!</h3>
+      <p>🗓️ You have <strong><span id="appointmentCount"></span></strong> patient appointments today.</p>
+    </div>
+  </div>
+
+  <script>
+    // Dummy data simulating doctor credentials and appointment counts
+    const doctorData = {
+      "doc001": { name: "Dr. Kevin Lee", appointments: 5, password: "ortho123" },
+      "doc002": { name: "Dr. Sophia Rao", appointments: 3, password: "derma456" },
+      "doc003": { name: "Dr. David Lee", appointments: 4, password: "cardio789" },
+      "doc004": { name: "Dr. Aisha Khan", appointments: 6, password: "neuro321" }
+    };
+
+    const form = document.getElementById("loginForm");
+    const resultBox = document.getElementById("resultBox");
+    const doctorNameSpan = document.getElementById("doctorName");
+    const appointmentCountSpan = document.getElementById("appointmentCount");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const doctorId = document.getElementById("doctorId").value.trim();
+      const password = document.getElementById("password").value.trim();
+
+      if (doctorData[doctorId] && doctorData[doctorId].password === password) {
+        doctorNameSpan.textContent = doctorData[doctorId].name;
+        appointmentCountSpan.textContent = doctorData[doctorId].appointments;
+        resultBox.style.display = "block";
+        form.style.display = "none";
+      } else {
+        alert("Invalid ID or password. Please try again.");
+      }
+    });
+  </script>
+
+</body>
+</html>

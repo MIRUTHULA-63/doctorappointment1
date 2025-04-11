@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Doctor Appointments - CarePlus Clinic</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f0f8ff;
+        color: #333;
+        line-height: 1.6;
+      }
+      header {
+        background: #004080;
+        padding: 1rem 2rem;
+        color: white;
+      }
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-size: 1.6rem;
+        font-weight: bold;
+      }
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        margin-left: 1.5rem;
+        font-weight: 500;
+      }
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+
+      .schedule-section {
+        max-width: 800px;
+        margin: 2rem auto;
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      }
+      .schedule-section h2 {
+        text-align: center;
+        color: #004080;
+        margin-bottom: 1.5rem;
+      }
+      .doctor-block {
+        margin-bottom: 2rem;
+      }
+      .doctor-block h3 {
+        color: #004080;
+        margin-bottom: 0.5rem;
+      }
+      ul.schedule {
+        list-style: none;
+        padding-left: 0;
+      }
+      ul.schedule li {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #ddd;
+      }
+      footer {
+        background: #004080;
+        color: white;
+        text-align: center;
+        padding: 1.5rem 1rem;
+        font-size: 0.9rem;
+        margin-top: 2rem;
+      }
+      footer p {
+        margin: 0.3rem 0;
+      }
+
+      @media (max-width: 768px) {
+        .header-container {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .nav-links {
+          margin-top: 0.5rem;
+        }
+        .nav-links a {
+          display: inline-block;
+          margin: 0.3rem 0.8rem 0.3rem 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <h1 class="logo">CarePlus Clinic</h1>
+        <nav class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="index.html#doctors">Doctors</a>
+          <a href="#">Appointments</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <section class="schedule-section">
+      <h2>Doctor Appointment Schedule</h2>
+
+      <div class="doctor-block">
+        <h3>🩺 Dr. Kevin Lee (Orthopedic Surgeon)</h3>
+        <ul class="schedule">
+          <li>Monday – 10:00 AM to 1:00 PM</li>
+          <li>Wednesday – 2:00 PM to 5:00 PM</li>
+          <li>Friday – 11:00 AM to 4:00 PM</li>
+        </ul>
+      </div>
+
+      <div class="doctor-block">
+        <h3>🌿 Dr. Sophia Rao (Dermatologist)</h3>
+        <ul class="schedule">
+          <li>Tuesday – 9:00 AM to 12:00 PM</li>
+          <li>Thursday – 2:00 PM to 6:00 PM</li>
+        </ul>
+      </div>
+
+      <div class="doctor-block">
+        <h3>❤️ Dr. David Lee (Cardiologist)</h3>
+        <ul class="schedule">
+          <li>Monday – 1:00 PM to 5:00 PM</li>
+          <li>Wednesday – 9:00 AM to 12:00 PM</li>
+          <li>Friday – 10:00 AM to 3:00 PM</li>
+        </ul>
+      </div>
+
+      <div class="doctor-block">
+        <h3>🧠 Dr. Aisha Khan (Neurologist)</h3>
+        <ul class="schedule">
+          <li>Monday – 9:00 AM to 12:00 PM</li>
+          <li>Thursday – 3:00 PM to 6:00 PM</li>
+          <li>Saturday – 10:00 AM to 1:00 PM</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      <h3>Contact Us</h3>
+      <p>📍 123 Wellness Avenue, Health City</p>
+      <p>📞 +91 98765 43210</p>
+      <p>📧 careplus@example.com</p>
+      <p>&copy; 2025 CarePlus Clinic. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
