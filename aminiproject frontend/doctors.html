@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Our Doctors - CarePlus Clinic</title>
+    <style>
+      /* Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f4faff;
+        color: #333;
+      }
+
+      header {
+        background: #004080;
+        color: white;
+        padding: 1.2rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+      }
+
+      nav a {
+        margin-left: 1.5rem;
+        font-weight: 500;
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #ffcc00;
+      }
+
+      .banner {
+        background: url("https://images.unsplash.com/photo-1606813909948-218f3e60aa1f?auto=format&fit=crop&w=1470&q=80")
+          no-repeat center center;
+        background-size: cover;
+        height: 350px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        color: white;
+      }
+
+      .banner::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 32, 63, 0.6);
+      }
+
+      .banner h1 {
+        position: relative;
+        font-size: 3rem;
+        z-index: 1;
+      }
+
+      .doctors-section {
+        max-width: 1100px;
+        margin: 3rem auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+      }
+
+      .doctors-section h2 {
+        font-size: 2rem;
+        color: #004080;
+        margin-bottom: 1rem;
+        border-left: 4px solid #004080;
+        padding-left: 0.6rem;
+      }
+
+      .doctor-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 2rem;
+      }
+
+      .doctor-card {
+        background-color: #f0f8ff;
+        border-radius: 10px;
+        overflow: hidden;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        transition: transform 0.3s;
+      }
+
+      .doctor-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .doctor-card img {
+        width: 100%;
+        height: 250px;
+        object-fit: cover;
+      }
+
+      .doctor-info {
+        padding: 1rem;
+      }
+
+      .doctor-info h3 {
+        margin-bottom: 0.3rem;
+        color: #003366;
+        font-size: 1.2rem;
+      }
+
+      .doctor-info p {
+        font-size: 0.95rem;
+        color: #555;
+      }
+
+      footer {
+        background: #004080;
+        color: white;
+        text-align: center;
+        padding: 1.5rem 1rem;
+        margin-top: 3rem;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        nav {
+          margin-top: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">CarePlus Clinic</div>
+      <nav>
+        <a
+          href="file:///C:/Users/mirut/OneDrive/Documents/aminiproject%20frontend/appointment.html"
+          >Home</a
+        >
+        <a
+          href="file:///C:/Users/mirut/OneDrive/Documents/aminiproject%20frontend/doctors.html"
+          >Doctors</a
+        >
+        <a href="appointments.html">Appointments</a>
+        <a
+          href="file:///C:/Users/mirut/OneDrive/Documents/aminiproject%20frontend/about.html"
+          >About</a
+        >
+        <a
+          href="file:///C:/Users/mirut/OneDrive/Documents/aminiproject%20frontend/services.html"
+          >Services</a
+        >
+      </nav>
+    </header>
+
+    <section class="banner">
+      <h1>Meet Our Doctors</h1>
+    </section>
+
+    <section class="doctors-section">
+      <h2>Our Specialists</h2>
+      <div class="doctor-grid">
+        <div class="doctor-card">
+          <img
+            src="https://randomuser.me/api/portraits/women/44.jpg"
+            alt="Dr. Sophia Rao"
+          />
+          <div class="doctor-info">
+            <h3>Dr. Sophia Rao</h3>
+            <p>Dermatologist</p>
+          </div>
+        </div>
+
+        <div class="doctor-card">
+          <img
+            src="https://randomuser.me/api/portraits/men/32.jpg"
+            alt="Dr. David Lee"
+          />
+          <div class="doctor-info">
+            <h3>Dr. David Lee</h3>
+            <p>Cardiologist</p>
+          </div>
+        </div>
+
+        <div class="doctor-card">
+          <img
+            src="https://randomuser.me/api/portraits/women/55.jpg"
+            alt="Dr. Aisha Khan"
+          />
+          <div class="doctor-info">
+            <h3>Dr. Aisha Khan</h3>
+            <p>Neurologist</p>
+          </div>
+        </div>
+
+        <div class="doctor-card">
+          <img
+            src="https://randomuser.me/api/portraits/men/45.jpg"
+            alt="Dr. Rajesh Mehta"
+          />
+          <div class="doctor-info">
+            <h3>Dr. Rajesh Mehta</h3>
+            <p>Orthopedic Surgeon</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>📍 123 Wellness Avenue, Health City</p>
+      <p>📞 +91 98765 43210 | 📧 careplus@example.com</p>
+      <p>&copy; 2025 CarePlus Clinic. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

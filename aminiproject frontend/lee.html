@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dr. Kevin Lee - Orthopedic Surgeon</title>
+    <style>
+      /* Base Reset */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f0f8ff;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Header */
+      header {
+        background: #004080;
+        padding: 1rem 2rem;
+        color: white;
+      }
+      .header-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .logo {
+        font-size: 1.6rem;
+        font-weight: bold;
+      }
+      .nav-links a {
+        color: white;
+        text-decoration: none;
+        margin-left: 1.5rem;
+        font-weight: 500;
+      }
+      .nav-links a:hover {
+        text-decoration: underline;
+      }
+
+      /* Doctor About Section */
+      .about {
+        padding: 3rem 2rem;
+        max-width: 800px;
+        margin: 2rem auto;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        text-align: center;
+      }
+      .about h2 {
+        font-size: 2rem;
+        color: #004080;
+        margin-bottom: 1rem;
+      }
+      .about img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 1rem;
+      }
+      .about p {
+        margin-bottom: 0.8rem;
+      }
+      .about button {
+        background: #004080;
+        color: white;
+        padding: 0.7rem 1.2rem;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+      .about button:hover {
+        background: #003060;
+      }
+
+      /* Appointment Form */
+      .appointment-form {
+        background: white;
+        padding: 2rem;
+        max-width: 600px;
+        margin: 2rem auto;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        display: none; /* Initially hidden */
+      }
+      .appointment-form h3 {
+        text-align: center;
+        margin-bottom: 1.5rem;
+        color: #004080;
+      }
+      .appointment-form label {
+        display: block;
+        margin: 0.5rem 0 0.2rem;
+      }
+      .appointment-form input {
+        width: 100%;
+        padding: 0.6rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      .appointment-form button {
+        background: #004080;
+        color: white;
+        padding: 0.7rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        width: 100%;
+        font-size: 1rem;
+        transition: 0.3s ease;
+      }
+      .appointment-form button:hover {
+        background: #003060;
+      }
+
+      /* Footer */
+      footer {
+        background: #004080;
+        color: white;
+        text-align: center;
+        padding: 1.5rem 1rem;
+        margin-top: 2rem;
+        font-size: 0.9rem;
+      }
+      footer p {
+        margin: 0.3rem 0;
+      }
+
+      /* Responsive */
+      @media (max-width: 768px) {
+        .header-container {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .nav-links {
+          margin-top: 0.5rem;
+        }
+        .nav-links a {
+          display: inline-block;
+          margin: 0.3rem 0.8rem 0.3rem 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="header-container">
+        <h1 class="logo">CarePlus Clinic</h1>
+        <nav class="nav-links">
+          <a href="index.html#about">About</a>
+          <a href="index.html#services">Services</a>
+          <a href="index.html#doctors">Doctors</a>
+          <a href="#appointment">Appointment</a>
+          <a href="index.html#testimonials">Testimonials</a>
+          <a href="index.html#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Doctor Details Section -->
+    <section class="about" id="doctorDetails">
+      <h2>Dr. Kevin Lee, MS (Ortho)</h2>
+      <img src="https://via.placeholder.com/150" alt="Dr. Kevin Lee" />
+      <p><strong>Orthopedic Surgeon</strong></p>
+      <p>
+        MBBS, MS (Orthopedics) – Specializes in joint replacement, sports
+        injuries, and trauma care with over 12 years of hands-on experience. Dr.
+        Lee is highly regarded for his precision in surgery and compassionate
+        patient care.
+      </p>
+      <p><strong>Availability:</strong> Monday to Friday, 10:00 AM - 5:00 PM</p>
+      <p><strong>Consultation Fee:</strong> ₹800</p>
+      <!-- Book Appointment Button -->
+      <button id="bookBtn">Book Appointment</button>
+    </section>
+
+    <!-- Appointment Form Section (Initially Hidden) -->
+    <section id="appointment" class="appointment-form">
+      <h3>Book Appointment with Dr. Kevin Lee</h3>
+      <form>
+        <input type="hidden" value="Dr. Kevin Lee - Orthopedic Surgeon" />
+
+        <label for="name">Full Name:</label>
+        <input type="text" name="name" required />
+
+        <label for="email">Email:</label>
+        <input type="email" name="email" required />
+
+        <label for="date">Preferred Date:</label>
+        <input type="date" name="date" required />
+
+        <label for="time">Preferred Time:</label>
+        <input type="time" name="time" required />
+
+        <button type="submit">Confirm Appointment</button>
+      </form>
+    </section>
+
+    <footer>
+      <h3>Contact Us</h3>
+      <p>📍 123 Wellness Avenue, Health City</p>
+      <p>📞 +91 98765 43210</p>
+      <p>📧 careplus@example.com</p>
+      <p>&copy; 2025 CarePlus Clinic. All rights reserved.</p>
+    </footer>
+
+    <script>
+      // When the "Book Appointment" button is clicked,
+      // hide the doctor's details and show the appointment form.
+      document.getElementById("bookBtn").addEventListener("click", function () {
+        document.getElementById("doctorDetails").style.display = "none";
+        document.getElementById("appointment").style.display = "block";
+        // Optionally, scroll to the appointment form:
+        document
+          .getElementById("appointment")
+          .scrollIntoView({ behavior: "smooth" });
+      });
+    </script>
+  </body>
+</html>

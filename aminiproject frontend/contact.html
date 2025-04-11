@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Contact Us - CarePlus Clinic</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f4faff;
+        color: #333;
+      }
+
+      header {
+        background: #004080;
+        color: white;
+        padding: 1.2rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+      }
+
+      nav a {
+        margin-left: 1.5rem;
+        font-weight: 500;
+        color: white;
+        text-decoration: none;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #ffcc00;
+      }
+
+      .banner {
+        background: url("https://images.unsplash.com/photo-1606813909948-218f3e60aa1f?auto=format&fit=crop&w=1470&q=80")
+          no-repeat center center;
+        background-size: cover;
+        height: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        color: white;
+      }
+
+      .banner::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 32, 63, 0.6);
+      }
+
+      .banner h1 {
+        position: relative;
+        font-size: 2.8rem;
+        z-index: 1;
+      }
+
+      .contact-container {
+        max-width: 1100px;
+        margin: 3rem auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+      }
+
+      .contact-info {
+        margin-bottom: 2rem;
+      }
+
+      .contact-info h2 {
+        font-size: 1.8rem;
+        margin-bottom: 0.8rem;
+        color: #004080;
+      }
+
+      .contact-info p {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .contact-form {
+        display: grid;
+        gap: 1rem;
+      }
+
+      .contact-form label {
+        font-weight: bold;
+      }
+
+      .contact-form input,
+      .contact-form textarea {
+        padding: 0.75rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 1rem;
+        width: 100%;
+      }
+
+      .contact-form textarea {
+        resize: vertical;
+        height: 120px;
+      }
+
+      .contact-form button {
+        background: #004080;
+        color: white;
+        padding: 0.8rem 1.2rem;
+        border: none;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        width: fit-content;
+      }
+
+      .contact-form button:hover {
+        background: #003060;
+      }
+
+      .map {
+        margin-top: 2rem;
+        height: 300px;
+        border-radius: 10px;
+        overflow: hidden;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      footer {
+        background: #004080;
+        color: white;
+        text-align: center;
+        padding: 1.5rem 1rem;
+        margin-top: 3rem;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        nav {
+          margin-top: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="logo">CarePlus Clinic</div>
+      <nav>
+        <a
+          href="file:///C:/Users/mirut/OneDrive/Documents/aminiproject%20frontend/appointment.html"
+          >Home</a
+        >
+        <a
+          href="file:///C:/Users/mirut/OneDrive/Documents/aminiproject%20frontend/doctors.html"
+          >Doctors</a
+        >
+        <a href="appointments.html">Appointments</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+    </header>
+
+    <section class="banner">
+      <h1>Contact Us</h1>
+    </section>
+
+    <section class="contact-container">
+      <div class="contact-info">
+        <h2>Get in Touch</h2>
+        <p>📍 Address: 123 Wellness Avenue, Health City</p>
+        <p>📞 Phone: +91 98765 43210</p>
+        <p>📧 Email: careplus@example.com</p>
+        <p>🕒 Working Hours: Mon - Sat: 9:00 AM - 8:00 PM</p>
+      </div>
+
+      <form class="contact-form">
+        <label for="name">Full Name</label>
+        <input
+          type="text"
+          id="name"
+          name="name"
+          placeholder="Your full name"
+          required
+        />
+
+        <label for="email">Email Address</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          placeholder="you@example.com"
+          required
+        />
+
+        <label for="message">Message</label>
+        <textarea
+          id="message"
+          name="message"
+          placeholder="Write your message..."
+          required
+        ></textarea>
+
+        <button type="submit">Send Message</button>
+      </form>
+
+      <div class="map">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3782.3541062495645!2d73.91541731489177!3d18.56168828738478!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bc2c12c21a24927%3A0x7fd8751de6584059!2sHospital!5e0!3m2!1sen!2sin!4v1614322619464!5m2!1sen!2sin"
+          allowfullscreen=""
+          loading="lazy"
+        ></iframe>
+      </div>
+    </section>
+
+    <footer>
+      <p>&copy; 2025 CarePlus Clinic. All rights reserved.</p>
+      <p>Designed with ❤️ for your health and wellness.</p>
+    </footer>
+  </body>
+</html>

@@ -3,155 +3,383 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Doctor Appointment</title>
-    <link
-      rel="stylesheet"
-      href="C:\Users\mirut\OneDrive\Documents\aminiproject frontend\appointment.css"
-    />
+    <title>Our Doctors - CarePlus Clinic</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background: url("https://images.unsplash.com/photo-1588776814546-bd4f1e62efb4?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80")
+          no-repeat center center fixed;
+        background-size: cover;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(245, 250, 255, 0.92);
+        z-index: -1;
+      }
+
+      header {
+        background: #001f3f;
+        color: white;
+        padding: 1rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+      nav a {
+        color: white;
+        margin-left: 1.5rem;
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.3s ease;
+      }
+
+      nav a:hover {
+        color: #ffcc00;
+      }
+
+      .hero {
+        text-align: center;
+        padding: 3rem 2rem;
+        background: rgba(255, 255, 255, 0.8);
+        margin: 2rem;
+        border-radius: 12px;
+      }
+
+      .hero h1 {
+        font-size: 3rem;
+        margin-bottom: 1rem;
+        color: #002147;
+      }
+
+      .hero p {
+        font-size: 1.2rem;
+        color: #444;
+      }
+
+      .hospital-info,
+      .why-choose,
+      .doctor-list {
+        max-width: 1100px;
+        margin: 2rem auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      .hospital-info h2,
+      .why-choose h2,
+      .doctor-list h2 {
+        font-size: 2rem;
+        color: #003366;
+        margin-bottom: 1rem;
+        border-left: 5px solid #004080;
+        padding-left: 0.5rem;
+      }
+
+      .hospital-info p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #444;
+      }
+
+      .why-choose ul {
+        list-style: none;
+        padding-left: 1rem;
+        color: #333;
+      }
+
+      .why-choose ul li {
+        padding: 0.6rem 0;
+        position: relative;
+      }
+
+      .why-choose ul li::before {
+        content: "✔";
+        color: green;
+        margin-right: 0.6rem;
+      }
+
+      .doctor-card {
+        display: flex;
+        align-items: center;
+        gap: 1.5rem;
+        padding: 1.2rem 0;
+        border-bottom: 1px solid #ccc;
+      }
+
+      .doctor-card:last-child {
+        border-bottom: none;
+      }
+
+      .doctor-card img {
+        width: 110px;
+        height: 110px;
+        object-fit: cover;
+        border-radius: 50%;
+        border: 3px solid #004080;
+      }
+
+      .doctor-info {
+        flex-grow: 1;
+      }
+
+      .doctor-info h3 {
+        margin-bottom: 0.3rem;
+        color: #004080;
+        font-size: 1.3rem;
+      }
+
+      .doctor-info p {
+        margin: 0.2rem 0;
+        font-size: 0.95rem;
+      }
+
+      .doctor-info button {
+        margin-top: 0.5rem;
+        background: #004080;
+        color: white;
+        padding: 0.5rem 1rem;
+        border-radius: 6px;
+        font-size: 0.9rem;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease;
+      }
+
+      .doctor-info button:hover {
+        background: #002e5f;
+      }
+
+      .appointment-form {
+        display: none;
+        margin: 2rem auto;
+        max-width: 600px;
+        background: white;
+        padding: 2rem;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      }
+
+      .appointment-form h3 {
+        margin-bottom: 1.5rem;
+        color: #003366;
+      }
+
+      .appointment-form input,
+      .appointment-form label {
+        display: block;
+        width: 100%;
+        margin-bottom: 1rem;
+      }
+
+      .appointment-form input {
+        padding: 0.6rem;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 0.95rem;
+      }
+
+      .appointment-form button {
+        width: 100%;
+        background: #004080;
+        color: white;
+        padding: 0.75rem;
+        border-radius: 6px;
+        border: none;
+        font-size: 1rem;
+        transition: background 0.3s ease;
+      }
+
+      .appointment-form button:hover {
+        background: #003366;
+      }
+
+      footer {
+        background: #001f3f;
+        color: white;
+        text-align: center;
+        padding: 1.5rem 1rem;
+        font-size: 0.9rem;
+        margin-top: 2rem;
+      }
+
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        nav {
+          margin-top: 0.5rem;
+        }
+
+        .doctor-card {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
   </head>
   <body>
     <header>
-      <div class="header-container">
-        <h1 class="logo">CarePlus Clinic</h1>
-        <nav class="nav-links">
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#doctors">Doctors</a>
-          <a href="#appointment">Appointment</a>
-          <a href="#testimonials">Testimonials</a>
-          <a href="#contact">Contact</a>
-        </nav>
-      </div>
+      <h1 class="logo">CarePlus Clinic</h1>
+      <nav>
+        <a
+          href="file:///C:/Users/mirut/OneDrive/Documents/aminiproject%20frontend/about.html"
+          >About</a
+        >
+        <a
+          href="file:///C:/Users/mirut/OneDrive/Documents/aminiproject%20frontend/services.html"
+          >Services</a
+        >
+        <a
+          href="file:///C:/Users/mirut/OneDrive/Documents/aminiproject%20frontend/doctors.html"
+          >Doctors</a
+        >
+        <a
+          href="file:///C:/Users/mirut/OneDrive/Documents/aminiproject%20frontend/contact.html"
+          >Contact</a
+        >
+      </nav>
     </header>
 
     <section class="hero">
-      <div class="hero-overlay">
-        <div class="hero-content">
-          <h2>Your Health, Our Priority</h2>
-          <p>
-            Book appointments with trusted doctors from the comfort of your
-            home. At CarePlus Clinic, we connect you with certified medical
-            professionals in just a few clicks.
-          </p>
-
-          <div class="highlights">
-            <div class="highlight">
-              <h4>👨‍⚕️ 50+ Specialists</h4>
-              <p>Expert care across 10+ specialties</p>
-            </div>
-            <div class="highlight">
-              <h4>🕒 Flexible Scheduling</h4>
-              <p>Choose convenient time slots</p>
-            </div>
-            <div class="highlight">
-              <h4>💬 Online Consultations</h4>
-              <p>Get medical advice from home</p>
-            </div>
-          </div>
-
-          <a href="#appointment" class="cta-button">Book Now</a>
-        </div>
-      </div>
+      <h1>Meet Our Expert Doctors</h1>
+      <p>Your health is our top priority. Choose the best care for you.</p>
     </section>
 
-    <section id="about" class="about">
-      <h2>About Us</h2>
+    <section class="hospital-info">
+      <h2>About CarePlus Clinic</h2>
       <p>
-        CarePlus Clinic has been providing expert healthcare for over 20 years.
-        Our team of specialists is committed to delivering personalized,
-        high-quality medical care.
+        CarePlus Clinic is a multi-specialty hospital with a mission to provide
+        affordable, high-quality healthcare to all. Our facility is equipped
+        with state-of-the-art diagnostic and treatment technology, ensuring
+        accurate care at every step. We’re driven by compassion, innovation, and
+        excellence.
       </p>
     </section>
 
-    <section id="services" class="services">
-      <h2>Our Services</h2>
+    <section class="why-choose">
+      <h2>Why Choose CarePlus?</h2>
       <ul>
-        <li>Cardiology</li>
-        <li>Dermatology</li>
-        <li>Orthopedics</li>
-        <li>Pediatrics</li>
-        <li>Neurology</li>
-        <li>General Medicine</li>
+        <li>Experienced team of doctors and specialists</li>
+        <li>Advanced diagnostic & surgical equipment</li>
+        <li>Personalized treatment approach</li>
+        <li>24/7 Emergency care services</li>
+        <li>Patient-friendly environment</li>
       </ul>
     </section>
 
-    <section id="doctors" class="doctors-section">
-      <h2>Meet Our Doctors</h2>
-      <div class="doctor-list">
-        <div class="doctor-card">
-          <img src="https://via.placeholder.com/150" alt="Dr. Smith" />
-          <h3>Dr. John Smith</h3>
-          <p>Cardiologist</p>
+    <section class="doctor-list" id="doctors">
+      <h2>Our Doctors</h2>
+
+      <div class="doctor-card">
+        <img src="https://via.placeholder.com/100" alt="Dr. Sophia Rao" />
+        <div class="doctor-info">
+          <h3>Dr. Sophia Rao, MD</h3>
+          <p><strong>Specialization:</strong> Dermatologist</p>
+          <p>
+            Expert in skin conditions, acne treatments, and cosmetic
+            dermatology.
+          </p>
+          <button
+            onclick="bookAppointment('file:///C:/Users/mirut/OneDrive/Documents/aminiproject%20frontend/sophiya.html')"
+          >
+            Book Appointment
+          </button>
         </div>
-        <div class="doctor-card">
-          <img src="https://via.placeholder.com/150" alt="Dr. Davis" />
-          <h3>Dr. Emily Davis</h3>
-          <p>Dermatologist</p>
+      </div>
+
+      <div class="doctor-card">
+        <img src="https://via.placeholder.com/100" alt="Dr. David Lee" />
+        <div class="doctor-info">
+          <h3>Dr. David Lee, MBBS, DM</h3>
+          <p><strong>Specialization:</strong> Cardiologist</p>
+          <p>Specialist in heart health, ECG, and hypertension care.</p>
+          <button onclick="bookAppointment('Dr. David Lee - Cardiologist')">
+            Book Appointment
+          </button>
         </div>
-        <div class="doctor-card">
-          <img src="https://via.placeholder.com/150" alt="Dr. Lee" />
-          <h3>Dr. Kevin Lee</h3>
-          <p>Orthopedic Surgeon</p>
+      </div>
+
+      <div class="doctor-card">
+        <img src="https://via.placeholder.com/100" alt="Dr. Aisha Khan" />
+        <div class="doctor-info">
+          <h3>Dr. Aisha Khan, MBBS, MD</h3>
+          <p><strong>Specialization:</strong> Neurologist</p>
+          <p>Treats migraines, seizures, and nervous system disorders.</p>
+          <button onclick="bookAppointment('Dr. Aisha Khan - Neurologist')">
+            Book Appointment
+          </button>
         </div>
-        <div class="doctor-card">
-          <img src="https://via.placeholder.com/150" alt="Dr. Patel" />
-          <h3>Dr. Asha Patel</h3>
-          <p>Pediatrician</p>
+      </div>
+
+      <div class="doctor-card">
+        <img src="https://via.placeholder.com/100" alt="Dr. Rajesh Mehta" />
+        <div class="doctor-info">
+          <h3>Dr. Rajesh Mehta, MS Ortho</h3>
+          <p><strong>Specialization:</strong> Orthopedic Surgeon</p>
+          <p>Handles joint pain, fractures, and sports-related injuries.</p>
+          <button
+            onclick="bookAppointment('Dr. Rajesh Mehta - Orthopedic Surgeon')"
+          >
+            Book Appointment
+          </button>
         </div>
       </div>
     </section>
 
-    <section id="appointment" class="appointment-form">
-      <h2>Book an Appointment</h2>
+    <section class="appointment-form" id="appointmentForm">
+      <h3>Book an Appointment</h3>
       <form>
+        <input type="hidden" id="doctorName" name="doctorName" />
         <label for="name">Full Name:</label>
-        <input type="text" id="name" required />
-
+        <input type="text" name="name" required />
         <label for="email">Email:</label>
-        <input type="email" id="email" required />
-
-        <label for="doctor">Choose Doctor:</label>
-        <select id="doctor">
-          <option>Dr. John Smith - Cardiologist</option>
-          <option>Dr. Emily Davis - Dermatologist</option>
-          <option>Dr. Kevin Lee - Orthopedic Surgeon</option>
-          <option>Dr. Asha Patel - Pediatrician</option>
-        </select>
-
+        <input type="email" name="email" required />
         <label for="date">Preferred Date:</label>
-        <input type="date" id="date" required />
-
+        <input type="date" name="date" required />
         <label for="time">Preferred Time:</label>
-        <input type="time" id="time" required />
-
-        <button type="submit">Book Appointment</button>
+        <input type="time" name="time" required />
+        <button type="submit">Confirm Appointment</button>
       </form>
     </section>
 
-    <section id="testimonials" class="testimonials">
-      <h2>What Our Patients Say</h2>
-      <div class="testimonial-card">
-        <p>
-          "CarePlus doctors really care! Dr. Smith helped me recover so quickly.
-          Highly recommended!"
-        </p>
-        <h4>- Maria L.</h4>
-      </div>
-      <div class="testimonial-card">
-        <p>
-          "Easy to book, friendly staff, and top-notch facilities. My kids love
-          Dr. Patel."
-        </p>
-        <h4>- Rahul D.</h4>
-      </div>
-    </section>
-
-    <footer id="contact">
-      <h3>Contact Us</h3>
+    <footer>
       <p>📍 123 Wellness Avenue, Health City</p>
-      <p>📞 +91 98765 43210</p>
-      <p>📧 careplus@example.com</p>
+      <p>📞 +91 98765 43210 | 📧 careplus@example.com</p>
       <p>&copy; 2025 CarePlus Clinic. All rights reserved.</p>
     </footer>
+
+    <script>
+      function bookAppointment(doctor) {
+        document.getElementById("appointmentForm").style.display = "block";
+        document.getElementById("doctorName").value = doctor;
+        document
+          .getElementById("appointmentForm")
+          .scrollIntoView({ behavior: "smooth" });
+      }
+    </script>
   </body>
 </html>

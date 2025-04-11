@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Our Services - CarePlus Clinic</title>
+    <style>
+      /* Base Styles */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Segoe UI", sans-serif;
+        background-color: #f4faff;
+        color: #333;
+      }
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+
+      header {
+        background: #004080;
+        color: white;
+        padding: 1.2rem 2rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+      }
+
+      nav a {
+        margin-left: 1.5rem;
+        font-weight: 500;
+        transition: color 0.3s;
+      }
+
+      nav a:hover {
+        color: #ffcc00;
+      }
+
+      .banner {
+        background: url("https://images.unsplash.com/photo-1588776814546-bd4f1e62efb4?auto=format&fit=crop&w=1470&q=80")
+          no-repeat center center;
+        background-size: cover;
+        height: 350px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        color: white;
+      }
+
+      .banner::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 32, 63, 0.6);
+      }
+
+      .banner h1 {
+        position: relative;
+        font-size: 3rem;
+        z-index: 1;
+      }
+
+      .services-section {
+        max-width: 1100px;
+        margin: 3rem auto;
+        padding: 2rem;
+        background: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.07);
+      }
+
+      .services-section h2 {
+        font-size: 2rem;
+        color: #004080;
+        margin-bottom: 1rem;
+        border-left: 4px solid #004080;
+        padding-left: 0.6rem;
+      }
+
+      .services-section p.intro {
+        margin-bottom: 2rem;
+        color: #444;
+        font-size: 1.05rem;
+      }
+
+      .service-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 2rem;
+      }
+
+      .service-card {
+        background: #f0f8ff;
+        border-left: 5px solid #0073e6;
+        padding: 1.2rem;
+        border-radius: 10px;
+        transition: transform 0.3s;
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+      }
+
+      .service-card h3 {
+        margin-bottom: 0.6rem;
+        color: #003366;
+        font-size: 1.2rem;
+      }
+
+      .service-card p {
+        font-size: 0.95rem;
+        color: #555;
+      }
+
+      footer {
+        background: #004080;
+        color: white;
+        text-align: center;
+        padding: 1.5rem 1rem;
+        margin-top: 3rem;
+        font-size: 0.9rem;
+      }
+
+      @media (max-width: 768px) {
+        header {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+
+        nav {
+          margin-top: 0.8rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">CarePlus Clinic</div>
+      <nav>
+        <a
+          href="file:///C:/Users/mirut/OneDrive/Documents/aminiproject%20frontend/appointment.html"
+          >Home</a
+        >
+        <a
+          href="file:///C:/Users/mirut/OneDrive/Documents/aminiproject%20frontend/doctors.html"
+          >Doctors</a
+        >
+        <a href="appointments.html">Appointments</a>
+        <a
+          href="file:///C:/Users/mirut/OneDrive/Documents/aminiproject%20frontend/about.html"
+          >About</a
+        >
+        <a
+          href="file:///C:/Users/mirut/OneDrive/Documents/aminiproject%20frontend/services.html"
+          >Services</a
+        >
+      </nav>
+    </header>
+
+    <section class="banner">
+      <h1>Our Services</h1>
+    </section>
+
+    <section class="services-section">
+      <h2>What We Offer</h2>
+      <p class="intro">
+        At CarePlus Clinic, we provide a comprehensive range of medical services
+        designed to meet the diverse needs of our patients. From routine
+        check-ups to complex surgical procedures, our dedicated team ensures
+        world-class care.
+      </p>
+
+      <div class="service-grid">
+        <div class="service-card">
+          <h3>General Medicine</h3>
+          <p>
+            Diagnosis and treatment of a wide range of common illnesses and
+            chronic conditions.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>Cardiology</h3>
+          <p>
+            Expert care for heart-related conditions including diagnostics,
+            treatment, and rehabilitation.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>Dermatology</h3>
+          <p>
+            Advanced skin care services including acne, eczema, cosmetic
+            treatments and more.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>Neurology</h3>
+          <p>
+            Comprehensive diagnosis and management of disorders of the brain and
+            nervous system.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>Orthopedics</h3>
+          <p>
+            Specialized treatment for bone, joint, and musculoskeletal disorders
+            including surgery.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>Laboratory & Diagnostics</h3>
+          <p>
+            Accurate lab testing, imaging, and diagnostic support using
+            state-of-the-art technology.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>Emergency Care</h3>
+          <p>
+            24/7 emergency department staffed with experienced medical
+            professionals and rapid response.
+          </p>
+        </div>
+
+        <div class="service-card">
+          <h3>Pediatrics</h3>
+          <p>
+            Compassionate and expert care for infants, children, and
+            adolescents.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <p>📍 123 Wellness Avenue, Health City</p>
+      <p>📞 +91 98765 43210 | 📧 careplus@example.com</p>
+      <p>&copy; 2025 CarePlus Clinic. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
